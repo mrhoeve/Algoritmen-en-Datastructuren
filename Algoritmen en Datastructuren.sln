@@ -5,10 +5,7 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algoritmen en Datastructuren", "Algoritmen en Datastructuren\Algoritmen en Datastructuren.csproj", "{22529604-DCFA-40D3-9697-DEEA65BD351D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test Algoritmen en Datastructuren", "..\Test Algoritmen en Datastructuren\Test Algoritmen en Datastructuren.csproj", "{E7F43279-8E96-4660-BF89-3268673702FB}"
-	ProjectSection(ProjectDependencies) = postProject
-		{22529604-DCFA-40D3-9697-DEEA65BD351D} = {22529604-DCFA-40D3-9697-DEEA65BD351D}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test Algoritmen en Datastructuren", "Test Algoritmen en Datastructuren\Test Algoritmen en Datastructuren.csproj", "{E7F43279-8E96-4660-BF89-3268673702FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
