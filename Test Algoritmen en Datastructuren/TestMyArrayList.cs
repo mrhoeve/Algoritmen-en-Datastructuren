@@ -8,6 +8,20 @@ namespace Test_Algoritmen_en_Datastructuren
     public class TestMyArrayList
     {
         [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void CreateArrayWithNegativeSize()
+        {
+            MyArrayList _myArray = new MyArrayList(-1);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void CreateArrayWithSizeOfZero()
+        {
+            MyArrayList _myArray = new MyArrayList(0);
+        }
+
+        [TestMethod]
         public void CreateMyArrayList()
         {
             MyArrayList _myArray = new MyArrayList(10);

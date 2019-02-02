@@ -22,6 +22,7 @@ namespace Algoritmen_en_Datastructuren
 
         public MyArrayList(int size)            // O(1)
         {
+            if (size < 1) throw new ArgumentOutOfRangeException("Minimum size for an array is 1");
             _myIntArray = new int?[size];
             _maxSize = size;
         }
