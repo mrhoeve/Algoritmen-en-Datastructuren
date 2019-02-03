@@ -23,8 +23,8 @@ namespace Algoritmen_en_Datastructuren
         public MyArrayList(int size)            // O(1)
         {
             if (size < 1) throw new ArgumentOutOfRangeException("Minimum size for an array is 1");
-            _myIntArray = new int?[size];
             _maxSize = size;
+            clear();
         }
 
         public void add(int n)                  // O(N)
@@ -43,12 +43,9 @@ namespace Algoritmen_en_Datastructuren
             if (!added) throw new ArgumentOutOfRangeException("Cannot add integer to a full array");
         }
 
-        public void clear()                     // O(N)
+        public void clear()                     // O(1)
         {
-            for (int stepper = 0; stepper < _maxSize; stepper++)
-            {
-                _myIntArray[stepper] = null;
-            }
+            _myIntArray = new int?[_maxSize];
         }
 
         public int countOccurences(int n)       // O(N)
