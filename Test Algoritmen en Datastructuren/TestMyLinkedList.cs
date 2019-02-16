@@ -107,6 +107,7 @@ namespace Test_Algoritmen_en_Datastructuren
 
     }
 
+    #pragma warning disable CS0659 // disable warning about not overriding GetHashCode()
     public class TestObject
     {
         public string testString { get; set; }
