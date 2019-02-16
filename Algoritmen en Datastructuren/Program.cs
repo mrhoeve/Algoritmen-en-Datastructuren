@@ -14,7 +14,7 @@ namespace Algoritmen_en_Datastructuren
             //Opgave_1_5 opgave_1_5 = new Opgave_1_5();
             //opgave_1_5.StartTest();
 
-            Zeef_van_Eratosthenes zeef = new Zeef_van_Eratosthenes(1000);
+            Zeef_van_Eratosthenes zeef = new Zeef_van_Eratosthenes(1000000);
             //Zeef_van_Eratosthenes zeef = new Zeef_van_Eratosthenes(146435000);
             zeef.StartZeven();
         }

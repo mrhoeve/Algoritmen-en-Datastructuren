@@ -43,9 +43,12 @@ namespace Algoritmen_en_Datastructuren
             if (!added) throw new ArgumentOutOfRangeException("Cannot add integer to a full array");
         }
 
-        public void clear()                     // O(1)
+        public void clear()                     // O(N), geen nieuwe initialisatie ivm geheugengebruik!
         {
-            _myIntArray = new int?[_maxSize];
+            for(int stepper=0; stepper<_maxSize; stepper++)
+            {
+                _myIntArray[stepper] = null;
+            }
         }
 
         public int countOccurences(int n)       // O(N)

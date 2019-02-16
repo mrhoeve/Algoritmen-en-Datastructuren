@@ -30,7 +30,7 @@ namespace Algoritmen_en_Datastructuren.Homework
             Zeef();
             stopwatch.Stop();
             Console.WriteLine($"Er zijn {numberOfPrimes + 1} gevonden bij het zeven. Dit zijn ze:\n");
-            for(int stepper=0;stepper<=numberOfPrimes;stepper++)
+            for (int stepper = 0; stepper <= numberOfPrimes; stepper++)
             {
                 Console.Write($"{foundPrimes[stepper]} ");
             }
@@ -47,7 +47,7 @@ namespace Algoritmen_en_Datastructuren.Homework
                 {
                     numberOfPrimes++;
                     foundPrimes[numberOfPrimes] = iterator;
-                    for(stepper=iterator+iterator;stepper<zeefSize;stepper+=iterator)
+                    for (stepper=iterator+iterator;stepper<zeefSize;stepper+=iterator)
                     {
                         zeefFlagged[stepper] = true;
                     }
