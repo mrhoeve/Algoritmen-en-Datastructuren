@@ -24,6 +24,7 @@ namespace Algoritmen_en_Datastructuren
         {
             if (size < 1) throw new ArgumentOutOfRangeException("Minimum size for an array is 1");
             _maxSize = size;
+            _myIntArray = new int?[_maxSize];
             clear();
         }
 

@@ -8,12 +8,17 @@ namespace Algoritmen_en_Datastructuren
 {
     public class Node<T>
     {
-        T data;
+        private T data;
         public Node<T> nextNode { get; set; }
 
         public Node(T t)
         {
             data = t;
+        }
+
+        public T get()
+        {
+            return data;
         }
     }
 }
