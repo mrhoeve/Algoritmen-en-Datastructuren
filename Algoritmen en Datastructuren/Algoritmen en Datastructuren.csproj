@@ -44,11 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Homework\Opgave_1_5.cs" />
+    <Compile Include="Homework\Opgave_2_4.cs" />
     <Compile Include="Homework\Zeef_van_Eratosthenes.cs" />
+    <Compile Include="Interface\IStack.cs" />
     <Compile Include="Interface\SimpleArrayList.cs" />
     <Compile Include="Interface\SimpleLinkedList.cs" />
     <Compile Include="MyArrayList.cs" />
     <Compile Include="MyLinkedList.cs" />
+    <Compile Include="MyStack.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
