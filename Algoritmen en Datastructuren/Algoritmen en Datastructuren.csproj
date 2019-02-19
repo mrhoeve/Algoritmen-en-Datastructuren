@@ -46,6 +46,7 @@
     <Compile Include="Homework\Opgave_1_5.cs" />
     <Compile Include="Homework\Opgave_2_4.cs" />
     <Compile Include="Homework\Opgave_3_2.cs" />
+    <Compile Include="Homework\Opgave_3_3.cs" />
     <Compile Include="Homework\Zeef_van_Eratosthenes.cs" />
     <Compile Include="Interface\IQueue.cs" />
     <Compile Include="Interface\IStack.cs" />

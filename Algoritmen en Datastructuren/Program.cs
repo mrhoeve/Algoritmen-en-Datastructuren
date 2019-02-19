@@ -13,7 +13,7 @@ namespace Algoritmen_en_Datastructuren
         {
             //Zeef_van_Eratosthenes zeef = new Zeef_van_Eratosthenes(1000000);
             //zeef.StartZeven();
-            Opgave_3_2 opgave = new Opgave_3_2();
+            Opgave_3_3 opgave = new Opgave_3_3();
             Console.ReadKey();
         }
     }
