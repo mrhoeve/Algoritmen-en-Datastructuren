@@ -1,9 +1,4 @@
 ﻿using Algoritmen_en_Datastructuren.Homework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Algoritmen_en_Datastructuren
 {
@@ -13,8 +8,9 @@ namespace Algoritmen_en_Datastructuren
         {
             //Zeef_van_Eratosthenes zeef = new Zeef_van_Eratosthenes(1000000);
             //zeef.StartZeven();
-            Opgave_3_4 opgave = new Opgave_3_4();
-            Console.ReadKey();
+            Opgave_3_5 opgave = new Opgave_3_5();
+            opgave.ShowDialog();
+            //Console.ReadKey();
         }
     }
 }
