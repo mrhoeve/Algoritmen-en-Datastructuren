@@ -9,7 +9,7 @@ namespace Algoritmen_en_Datastructuren.Homework
 {
     public class Opgave_3_2
     {
-        public Opgave_3_2(int aantalElementen = 35)
+        public Opgave_3_2(int aantalElementen = 40)
         {
             int uitkomstRecursief;
             int uitkomstNietRecursief;
