@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Homework\Opgave_3_4.cs" />
     <Compile Include="Homework\Opgave_1_5.cs" />
     <Compile Include="Homework\Opgave_2_4.cs" />
     <Compile Include="Homework\Opgave_3_2.cs" />
