@@ -57,6 +57,7 @@
       <DependentUpon>Opgave_3_5.cs</DependentUpon>
     </Compile>
     <Compile Include="Homework\Opgave_3_6.cs" />
+    <Compile Include="Homework\Opgave_3_7.cs" />
     <Compile Include="Homework\Zeef_van_Eratosthenes.cs" />
     <Compile Include="Interface\IQueue.cs" />
     <Compile Include="Interface\IStack.cs" />

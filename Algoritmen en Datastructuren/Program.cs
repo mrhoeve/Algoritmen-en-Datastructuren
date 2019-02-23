@@ -11,7 +11,7 @@ namespace Algoritmen_en_Datastructuren
             //zeef.StartZeven();
             //Opgave_3_5 opgave = new Opgave_3_5();
             //opgave.ShowDialog();
-            Opgave_3_6 opgave = new Opgave_3_6();
+            Opgave_3_7 opgave = new Opgave_3_7();
             Console.ReadKey();
         }
     }
