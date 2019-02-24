@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Homework\TestOpgave_2_4.cs" />
     <Compile Include="Homework\TestOpgave_2_5.cs" />
+    <Compile Include="Homework\TestOpgave_3_7.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestMyArrayList.cs" />
     <Compile Include="TestMyLinkedList.cs" />

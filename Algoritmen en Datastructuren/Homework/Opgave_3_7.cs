@@ -37,6 +37,7 @@ namespace Algoritmen_en_Datastructuren.Homework
 
             // Clone the generated lists
             List<int> listInsertionsort = new List<int>(baseList.Select(x => x));
+
             listInsertionsort.CopyTo(arrayInsertionsort);
             List<int> listShellsort = new List<int>(baseList.Select(x => x));
             listShellsort.CopyTo(arrayShellsort);
