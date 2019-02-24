@@ -26,6 +26,7 @@ namespace Test_Algoritmen_en_Datastructuren.Homework
             int[] arrayInsertionsort = new int[quantity];
             int[] arrayShellsort = new int[quantity];
             int[] arrayMergesort = new int[quantity];
+            int[] arrayQuicksort = new int[quantity];
 
             // Populate both lists with random numbers, but the lists have to remain equal for comparison
             generateLists(quantity);
@@ -37,23 +38,41 @@ namespace Test_Algoritmen_en_Datastructuren.Homework
             listShellsort.CopyTo(arrayShellsort);
             List<int> listMergesort = new List<int>(baseList.Select(x => x));
             listMergesort.CopyTo(arrayMergesort);
+            List<int> listQuicksort = new List<int>(baseList.Select(x => x));
+            listQuicksort.CopyTo(arrayQuicksort);
 
             // Check if all lists are equal to their bases
             Assert.IsTrue(baseList.SequenceEqual(listInsertionsort));
             Assert.IsTrue(baseList.SequenceEqual(listShellsort));
             Assert.IsTrue(baseList.SequenceEqual(listMergesort));
+            Assert.IsTrue(baseList.SequenceEqual(listQuicksort));
 
             Assert.IsTrue(baseArray.SequenceEqual(arrayInsertionsort));
             Assert.IsTrue(baseArray.SequenceEqual(arrayShellsort));
             Assert.IsTrue(baseArray.SequenceEqual(arrayMergesort));
+            Assert.IsTrue(baseArray.SequenceEqual(arrayQuicksort));
 
-            // Do the sortations
+            // Do the sortations and do some comparisons
             Opgave_3_7_Sortings<int>.Insertionsort(listInsertionsort);
             Opgave_3_7_Sortings<int>.Insertionsort(arrayInsertionsort);
+
+            Assert.IsFalse(listInsertionsort.SequenceEqual(listShellsort));
+            Assert.IsFalse(arrayInsertionsort.SequenceEqual(arrayShellsort));
+
             Opgave_3_7_Sortings<int>.Shellsort(listShellsort);
             Opgave_3_7_Sortings<int>.Shellsort(arrayShellsort);
+
+            Assert.IsFalse(listShellsort.SequenceEqual(listMergesort));
+            Assert.IsFalse(arrayShellsort.SequenceEqual(arrayMergesort));
+
             Opgave_3_7_Sortings<int>.Mergesort(listMergesort);
             Opgave_3_7_Sortings<int>.Mergesort(arrayMergesort);
+
+            Assert.IsFalse(listMergesort.SequenceEqual(listQuicksort));
+            Assert.IsFalse(arrayMergesort.SequenceEqual(arrayQuicksort));
+
+            Opgave_3_7_Sortings<int>.Quicksort(listQuicksort);
+            Opgave_3_7_Sortings<int>.Quicksort(arrayQuicksort);
 
             // Compare the results!
             // First compare all lists to their bases
@@ -61,18 +80,22 @@ namespace Test_Algoritmen_en_Datastructuren.Homework
             Assert.IsFalse(baseList.SequenceEqual(listInsertionsort));
             Assert.IsFalse(baseList.SequenceEqual(listShellsort));
             Assert.IsFalse(baseList.SequenceEqual(listMergesort));
+            Assert.IsFalse(baseList.SequenceEqual(listQuicksort));
 
             Assert.IsFalse(baseArray.SequenceEqual(arrayInsertionsort));
             Assert.IsFalse(baseArray.SequenceEqual(arrayShellsort));
             Assert.IsFalse(baseArray.SequenceEqual(arrayMergesort));
+            Assert.IsFalse(baseArray.SequenceEqual(arrayQuicksort));
 
             // Now compare the sorted lists
             // If everything works according to plan, every list should be equal to eachother.
             Assert.IsTrue(listInsertionsort.SequenceEqual(listShellsort));
             Assert.IsTrue(listShellsort.SequenceEqual(listMergesort));
+            Assert.IsTrue(listMergesort.SequenceEqual(listQuicksort));
 
             Assert.IsTrue(arrayInsertionsort.SequenceEqual(arrayShellsort));
             Assert.IsTrue(arrayShellsort.SequenceEqual(arrayMergesort));
+            Assert.IsTrue(arrayMergesort.SequenceEqual(arrayQuicksort));
         }
 
         private void generateLists(int quantity)

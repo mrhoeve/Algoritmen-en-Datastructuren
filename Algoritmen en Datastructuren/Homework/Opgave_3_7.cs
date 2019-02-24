@@ -20,6 +20,7 @@ namespace Algoritmen_en_Datastructuren.Homework
             int[] arrayInsertionsort = new int[quantity];
             int[] arrayShellsort = new int[quantity];
             int[] arrayMergesort = new int[quantity];
+            int[] arrayQuicksort = new int[quantity];
 
             // Initialise timers
             Stopwatch clockRunningTime = new Stopwatch();
@@ -30,6 +31,8 @@ namespace Algoritmen_en_Datastructuren.Homework
             TimeSpan timeShellArray;
             TimeSpan timeMergeList;
             TimeSpan timeMergeArray;
+            TimeSpan timeQuickList;
+            TimeSpan timeQuickArray;
             TimeSpan totalRunningTime;
 
             // Populate both lists with random numbers, but the lists have to remain equal for comparison
@@ -43,6 +46,8 @@ namespace Algoritmen_en_Datastructuren.Homework
             listShellsort.CopyTo(arrayShellsort);
             List<int> listMergesort = new List<int>(baseList.Select(x => x));
             listMergesort.CopyTo(arrayMergesort);
+            List<int> listQuicksort = new List<int>(baseList.Select(x => x));
+            listQuicksort.CopyTo(arrayQuicksort);
 
             clockRunningTime.Start();
             stopwatch.Start();
@@ -69,11 +74,19 @@ namespace Algoritmen_en_Datastructuren.Homework
             Opgave_3_7_Sortings<int>.Mergesort(arrayMergesort);
             stopwatch.Stop();
             timeMergeArray = stopwatch.Elapsed;
+            stopwatch.Restart();
+            Opgave_3_7_Sortings<int>.Quicksort(listQuicksort);
+            stopwatch.Stop();
+            timeQuickList = stopwatch.Elapsed;
+            stopwatch.Restart();
+            Opgave_3_7_Sortings<int>.Quicksort(arrayQuicksort);
+            stopwatch.Stop();
+            timeQuickArray = stopwatch.Elapsed;
             clockRunningTime.Stop();
             totalRunningTime = clockRunningTime.Elapsed;
 
             // Compare the results!
-            if (listInsertionsort.SequenceEqual(listShellsort) && listShellsort.SequenceEqual(listMergesort))
+            if (listInsertionsort.SequenceEqual(listShellsort) && listShellsort.SequenceEqual(listMergesort) && listMergesort.SequenceEqual(listQuicksort))
             {
                 Console.WriteLine("De lijsten zijn vergeleken en zijn gelijk.");
             }
@@ -81,7 +94,7 @@ namespace Algoritmen_en_Datastructuren.Homework
             {
                 Console.WriteLine("De lijsten zijn vergeleken en zijn VERSCHILLEND!");
             }
-            if (arrayInsertionsort.SequenceEqual(arrayShellsort) && arrayShellsort.SequenceEqual(arrayMergesort))
+            if (arrayInsertionsort.SequenceEqual(arrayShellsort) && arrayShellsort.SequenceEqual(arrayMergesort) && arrayMergesort.SequenceEqual(arrayQuicksort))
             {
                 Console.WriteLine("De arrays zijn vergeleken en zijn gelijk.");
             }
@@ -95,6 +108,7 @@ namespace Algoritmen_en_Datastructuren.Homework
             Console.WriteLine($"Insertion Sort: {timeInsertionList.TotalMilliseconds}\t{timeInsertionArray.TotalMilliseconds}");
             Console.WriteLine($"Shell Sort    : {timeShellList.TotalMilliseconds}\t{timeShellArray.TotalMilliseconds}");
             Console.WriteLine($"Merge Sort    : {timeMergeList.TotalMilliseconds}\t{timeMergeArray.TotalMilliseconds}");
+            Console.WriteLine($"Quick Sort    : {timeQuickList.TotalMilliseconds}\t{timeQuickArray.TotalMilliseconds}");
         }
 
         private void generateLists(int quantity)
@@ -210,6 +224,97 @@ namespace Algoritmen_en_Datastructuren.Homework
             for (int i = 0; i < numElements; i++, rightEnd--)
                 theList[rightEnd] = tempArray[rightEnd];
         }
+        #endregion
+
+        #region "Quicksort algorithm"
+        private static readonly int CUTOFF = 10;
+        /// <summary>
+        /// Quicksort algorithm driver / entry point
+        /// </summary>
+        /// <param name="theList"></param>
+        public static void Quicksort(IList<T> theList)
+        {
+            Quicksort(theList, 0, theList.Count - 1);
+        }
+        /// <summary>
+        /// Internal Quicksort method that makes recursive calls
+        /// Uses median-of-three partitioning and a cutoff
+        /// </summary>
+        /// <param name="theList">Array or List of Comparible items</param>
+        /// <param name="low">Lowest index to use</param>
+        /// <param name="high">Highest index to use</param>
+        private static void Quicksort(IList<T> theList, int low, int high)
+        {
+            if (low + CUTOFF > high)
+                insertionsortForQuicksort(theList, low, high);
+            else
+            {
+                // Sort low, middle, high
+                int middle = (low + high) / 2;
+                if (theList[middle].CompareTo(theList[low]) < 0)
+                    swapReferences(theList, low, middle);
+                if (theList[high].CompareTo(theList[low]) < 0)
+                    swapReferences(theList, low, high);
+                if (theList[high].CompareTo(theList[middle]) < 0)
+                    swapReferences(theList, middle, high);
+
+                // Place pivot at position high - 1
+                swapReferences(theList, middle, high - 1);
+                T pivot = theList[high - 1];
+
+                int i;
+                int j;
+                for(i=low, j=high-1; ;)
+                {
+                    while (theList[++i].CompareTo(pivot) < 0)
+                        ;
+                    while (pivot.CompareTo(theList[--j]) < 0)
+                        ;
+                    if (i >= j)
+                        break;
+                    swapReferences(theList, i, j);
+                }
+
+                // Restore pivot
+                swapReferences(theList, i, high - 1);
+                Quicksort(theList, low, i - 1);     // sort small elements
+                Quicksort(theList, i + 1, high);    // sort large elements
+            }
+        }
+
+        /// <summary>
+        /// Swaps indexes in theList
+        /// </summary>
+        /// <param name="theList">Array or List of Comparible items</param>
+        /// <param name="a">First index to swap</param>
+        /// <param name="b">Second index to swap</param>
+        private static void swapReferences(IList<T> theList, int a, int b)
+        {
+            T c = theList[a];
+            theList[a] = theList[b];
+            theList[b] = c;
+        }
+
+        /// <summary>
+        /// Insertion sort routine for Quicksort
+        /// </summary>
+        /// <param name="theList">Array or List of Comparible items</param>
+        /// <param name="low">Lowest index to sort</param>
+        /// <param name="high">Highest index to sort</param>
+        private static void insertionsortForQuicksort(IList<T> theList, int low, int high)
+        {
+            for (int p = low+1; p <= high; p++)
+            {
+                T temp = theList[p];
+                int j = p;
+                for (; j > 0 && temp.CompareTo(theList[j - 1]) < 0; j--)
+                {
+                    theList[j] = theList[j - 1];
+                }
+                theList[j] = temp;
+            }
+        }
+
         #endregion
     }
 }
