@@ -53,26 +53,26 @@ namespace Test_Algoritmen_en_Datastructuren.Homework
             Assert.IsTrue(baseArray.SequenceEqual(arrayQuicksort));
 
             // Do the sortations and do some comparisons
-            Opgave_3_7_Sortings<int>.Insertionsort(listInsertionsort);
-            Opgave_3_7_Sortings<int>.Insertionsort(arrayInsertionsort);
+            Opgave_3_7_Sortings.Insertionsort(listInsertionsort);
+            Opgave_3_7_Sortings.Insertionsort(arrayInsertionsort);
 
             Assert.IsFalse(listInsertionsort.SequenceEqual(listShellsort));
             Assert.IsFalse(arrayInsertionsort.SequenceEqual(arrayShellsort));
 
-            Opgave_3_7_Sortings<int>.Shellsort(listShellsort);
-            Opgave_3_7_Sortings<int>.Shellsort(arrayShellsort);
+            Opgave_3_7_Sortings.Shellsort(listShellsort);
+            Opgave_3_7_Sortings.Shellsort(arrayShellsort);
 
             Assert.IsFalse(listShellsort.SequenceEqual(listMergesort));
             Assert.IsFalse(arrayShellsort.SequenceEqual(arrayMergesort));
 
-            Opgave_3_7_Sortings<int>.Mergesort(listMergesort);
-            Opgave_3_7_Sortings<int>.Mergesort(arrayMergesort);
+            Opgave_3_7_Sortings.Mergesort(listMergesort);
+            Opgave_3_7_Sortings.Mergesort(arrayMergesort);
 
             Assert.IsFalse(listMergesort.SequenceEqual(listQuicksort));
             Assert.IsFalse(arrayMergesort.SequenceEqual(arrayQuicksort));
 
-            Opgave_3_7_Sortings<int>.Quicksort(listQuicksort);
-            Opgave_3_7_Sortings<int>.Quicksort(arrayQuicksort);
+            Opgave_3_7_Sortings.Quicksort(listQuicksort);
+            Opgave_3_7_Sortings.Quicksort(arrayQuicksort);
 
             // Compare the results!
             // First compare all lists to their bases

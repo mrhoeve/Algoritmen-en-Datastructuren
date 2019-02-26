@@ -51,35 +51,35 @@ namespace Algoritmen_en_Datastructuren.Homework
 
             clockRunningTime.Start();
             stopwatch.Start();
-            Opgave_3_7_Sortings<int>.Insertionsort(listInsertionsort);
+            Opgave_3_7_Sortings.Insertionsort(listInsertionsort);
             stopwatch.Stop();
             timeInsertionList = stopwatch.Elapsed;
             stopwatch.Restart();
-            Opgave_3_7_Sortings<int>.Insertionsort(arrayInsertionsort);
+            Opgave_3_7_Sortings.Insertionsort(arrayInsertionsort);
             stopwatch.Stop();
             timeInsertionArray = stopwatch.Elapsed;
             stopwatch.Restart();
-            Opgave_3_7_Sortings<int>.Shellsort(listShellsort);
+            Opgave_3_7_Sortings.Shellsort(listShellsort);
             stopwatch.Stop();
             timeShellList = stopwatch.Elapsed;
             stopwatch.Restart();
-            Opgave_3_7_Sortings<int>.Shellsort(arrayShellsort);
+            Opgave_3_7_Sortings.Shellsort(arrayShellsort);
             stopwatch.Stop();
             timeShellArray = stopwatch.Elapsed;
             stopwatch.Restart();
-            Opgave_3_7_Sortings<int>.Mergesort(listMergesort);
+            Opgave_3_7_Sortings.Mergesort(listMergesort);
             stopwatch.Stop();
             timeMergeList = stopwatch.Elapsed;
             stopwatch.Restart();
-            Opgave_3_7_Sortings<int>.Mergesort(arrayMergesort);
+            Opgave_3_7_Sortings.Mergesort(arrayMergesort);
             stopwatch.Stop();
             timeMergeArray = stopwatch.Elapsed;
             stopwatch.Restart();
-            Opgave_3_7_Sortings<int>.Quicksort(listQuicksort);
+            Opgave_3_7_Sortings.Quicksort(listQuicksort);
             stopwatch.Stop();
             timeQuickList = stopwatch.Elapsed;
             stopwatch.Restart();
-            Opgave_3_7_Sortings<int>.Quicksort(arrayQuicksort);
+            Opgave_3_7_Sortings.Quicksort(arrayQuicksort);
             stopwatch.Stop();
             timeQuickArray = stopwatch.Elapsed;
             clockRunningTime.Stop();
@@ -120,13 +120,13 @@ namespace Algoritmen_en_Datastructuren.Homework
         }
     }
 
-    public static class Opgave_3_7_Sortings<T> where T : IComparable
+    public static class Opgave_3_7_Sortings
     {
         /// <summary>
         /// Insertionsort algorithm
         /// </summary>
         /// <param name="theList">Array or List of Comparible items</param>
-        public static void Insertionsort(IList<T> theList)
+        public static void Insertionsort<T>(IList<T> theList) where T : IComparable
         {
             for (int p = 1; p < theList.Count; p++)
             {
@@ -144,7 +144,7 @@ namespace Algoritmen_en_Datastructuren.Homework
         /// Shellsort algorithm
         /// </summary>
         /// <param name="theList">Array or List of Comparible items</param>
-        public static void Shellsort(IList<T> theList)
+        public static void Shellsort<T>(IList<T> theList) where T : IComparable
         {
             for(int gap = theList.Count / 2; gap > 0;
                 gap = gap == 2 ? 1 : (int) (gap / 2.2))
@@ -163,7 +163,7 @@ namespace Algoritmen_en_Datastructuren.Homework
         /// Mergesort algorithm
         /// </summary>
         /// <param name="theList">Array or List of Comparible items</param>
-        public static void Mergesort(IList<T> theList)
+        public static void Mergesort<T>(IList<T> theList) where T : IComparable
         {
             IList<T> tempArray = new T[theList.Count];
             MergeSort(theList, tempArray, 0, theList.Count - 1);
@@ -176,7 +176,7 @@ namespace Algoritmen_en_Datastructuren.Homework
         /// <param name="tempArray">Array to place the merged results</param>
         /// <param name="left">left-most index of the subarray</param>
         /// <param name="right">right-most index of the subarray</param>
-        private static void MergeSort(IList<T> theList, IList<T> tempArray, int left, int right)
+        private static void MergeSort<T>(IList<T> theList, IList<T> tempArray, int left, int right) where T : IComparable
         {
             if(left < right)
             {
@@ -195,7 +195,7 @@ namespace Algoritmen_en_Datastructuren.Homework
         /// <param name="leftPos">left-most index of the subarray</param>
         /// <param name="rightPos">index of the start of the second half</param>
         /// <param name="rightEnd">right-most index of the subarray</param>
-        private static void Merge(IList<T> theList, IList<T> tempArray, int leftPos, int rightPos, int rightEnd)
+        private static void Merge<T>(IList<T> theList, IList<T> tempArray, int leftPos, int rightPos, int rightEnd) where T : IComparable
         {
             int leftEnd = rightPos - 1;
             int tmpPos = leftPos;
@@ -232,7 +232,7 @@ namespace Algoritmen_en_Datastructuren.Homework
         /// Quicksort algorithm driver / entry point
         /// </summary>
         /// <param name="theList"></param>
-        public static void Quicksort(IList<T> theList)
+        public static void Quicksort<T>(IList<T> theList) where T : IComparable
         {
             Quicksort(theList, 0, theList.Count - 1);
         }
@@ -243,7 +243,7 @@ namespace Algoritmen_en_Datastructuren.Homework
         /// <param name="theList">Array or List of Comparible items</param>
         /// <param name="low">Lowest index to use</param>
         /// <param name="high">Highest index to use</param>
-        private static void Quicksort(IList<T> theList, int low, int high)
+        private static void Quicksort<T>(IList<T> theList, int low, int high) where T : IComparable
         {
             if (low + CUTOFF > high)
                 insertionsortForQuicksort(theList, low, high);
@@ -288,7 +288,7 @@ namespace Algoritmen_en_Datastructuren.Homework
         /// <param name="theList">Array or List of Comparible items</param>
         /// <param name="a">First index to swap</param>
         /// <param name="b">Second index to swap</param>
-        private static void swapReferences(IList<T> theList, int a, int b)
+        private static void swapReferences<T>(IList<T> theList, int a, int b) where T : IComparable
         {
             T c = theList[a];
             theList[a] = theList[b];
@@ -301,7 +301,7 @@ namespace Algoritmen_en_Datastructuren.Homework
         /// <param name="theList">Array or List of Comparible items</param>
         /// <param name="low">Lowest index to sort</param>
         /// <param name="high">Highest index to sort</param>
-        private static void insertionsortForQuicksort(IList<T> theList, int low, int high)
+        private static void insertionsortForQuicksort<T>(IList<T> theList, int low, int high) where T : IComparable
         {
             for (int p = low+1; p <= high; p++)
             {
