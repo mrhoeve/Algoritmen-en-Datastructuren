@@ -14,8 +14,10 @@ namespace Algoritmen_en_Datastructuren.Homework
             BinaryTree<int> tree = new BinaryTree<int>(4);
             tree.GetRoot().setLeft(new BinaryNode<int>(2, new BinaryNode<int>(1, null, null), new BinaryNode<int>(3, null, null)));
             tree.GetRoot().setRight(new BinaryNode<int>(6, null, null));
-            Console.WriteLine("");
             Console.WriteLine(tree.ToString());
+            Console.WriteLine($"Number of leaves: {tree.CountLeaves()}");
+            Console.WriteLine($"Number of nodes with 1 child: {tree.CountNodesWithOneChild()}");
+            Console.WriteLine($"Number of nodes with 2 children: {tree.CountNodesWithTwoChildren()}");
         }
         
 

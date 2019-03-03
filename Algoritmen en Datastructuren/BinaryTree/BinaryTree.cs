@@ -30,6 +30,21 @@ namespace Algoritmen_en_Datastructuren.BinaryTree
             return BinaryNode<T>.Height(root);
         }
 
+        public int CountLeaves()
+        {
+            return BinaryNode<T>.CountLeaves(root);
+        }
+
+        public int CountNodesWithOneChild()
+        {
+            return BinaryNode<T>.CountNodesWithOneChild(root);
+        }
+
+        public int CountNodesWithTwoChildren()
+        {
+            return BinaryNode<T>.CountNodesWithTwoChildren(root);
+        }
+
         public bool IsEmpty()
         {
             return root == null;

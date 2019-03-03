@@ -60,6 +60,39 @@ namespace Algoritmen_en_Datastructuren.BinaryTree
             return 1 + Math.Max(Height(node.left), Height(node.right));
         }
 
+        public static int CountLeaves(BinaryNode<T> node)
+        {
+            if (node == null) return 0;
+            if (node.left == null && node.right == null) return 1;
+            return CountLeaves(node.left) + CountLeaves(node.right);
+        }
+
+        public static int CountNodesWithOneChild(BinaryNode<T> node)
+        {
+            if (node == null) return 0;
+            if ((node.left != null && node.right == null) || (node.left == null && node.right != null))
+            {
+                return 1 + CountNodesWithOneChild(node.left) + CountNodesWithOneChild(node.right);
+            }
+            else
+            {
+                return CountNodesWithOneChild(node.left) + CountNodesWithOneChild(node.right);
+            }
+        }
+
+        public static int CountNodesWithTwoChildren(BinaryNode<T> node)
+        {
+            if (node == null) return 0;
+            if (node.left != null && node.right != null)
+            {
+                return 1 + CountNodesWithTwoChildren(node.left) + CountNodesWithTwoChildren(node.right);
+            }
+            else
+            {
+                return CountNodesWithTwoChildren(node.left) + CountNodesWithTwoChildren(node.right);
+            }
+        }
+
         public BinaryNode<T> duplicate()
         {
             BinaryNode<T> root = new BinaryNode<T>(element, null, null);
@@ -98,23 +131,9 @@ namespace Algoritmen_en_Datastructuren.BinaryTree
         {
             StringBuilder sb = new StringBuilder();
             if (level != 0) sb.Append("[ ");
-            if (left != null)
-            {
-                sb.Append(left.ToString(level + 1));
-            }
-            else
-            {
-                sb.Append("NULL ");
-            }
+            sb.Append(left != null ? left.ToString(level + 1) : "NULL ");
             sb.Append($"{element} ");
-            if (right != null)
-            {
-                sb.Append(right.ToString(level + 1));
-            }
-            else
-            {
-               sb.Append("NULL ");
-            }
+            sb.Append(right != null ? right.ToString(level + 1) : "NULL ");
             if (level != 0) sb.Append("] ");
             return sb.ToString();
         }
