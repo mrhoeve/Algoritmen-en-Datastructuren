@@ -14,7 +14,8 @@ namespace Algoritmen_en_Datastructuren.Homework
             BinaryTree<int> tree = new BinaryTree<int>(4);
             tree.GetRoot().setLeft(new BinaryNode<int>(2, new BinaryNode<int>(1, null, null), new BinaryNode<int>(3, null, null)));
             tree.GetRoot().setRight(new BinaryNode<int>(6, null, null));
-            tree.PrintInOrder();
+            Console.WriteLine("");
+            Console.WriteLine(tree.ToString());
         }
         
 

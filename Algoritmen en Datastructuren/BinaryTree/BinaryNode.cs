@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Algoritmen_en_Datastructuren.BinaryTree
 {
@@ -81,26 +82,41 @@ namespace Algoritmen_en_Datastructuren.BinaryTree
             Console.Write(element);
         }
 
-        public void printInOrder(int level = 0)
+        public void printInOrder()
         {
-            if(level != 0) Console.Write("[ ");
+            if (left != null) left.printPostOrder();
+            Console.Write(element);
+            if (right != null) right.printPostOrder();
+        }
+
+        public override string ToString()
+        {
+            return ToString(0);
+        }
+
+        private string ToString(int level = 0)
+        {
+            StringBuilder sb = new StringBuilder();
+            if (level != 0) sb.Append("[ ");
             if (left != null)
             {
-                left.printInOrder(++level);
+                sb.Append(left.ToString(level + 1));
             }
             else
             {
-                Console.Write("NULL ");
+                sb.Append("NULL ");
             }
-            Console.Write($"{element} ");
+            sb.Append($"{element} ");
             if (right != null)
             {
-                right.printInOrder(++level);
-            } else
-            {
-                Console.Write("NULL ");
+                sb.Append(right.ToString(level + 1));
             }
-            if (level != 0) Console.Write("] ");
+            else
+            {
+               sb.Append("NULL ");
+            }
+            if (level != 0) sb.Append("] ");
+            return sb.ToString();
         }
     }
 }

@@ -77,5 +77,10 @@ namespace Algoritmen_en_Datastructuren.BinaryTree
             if (this != t1) t1.root = null;
             if (this != t2) t2.root = null;
         }
+
+        public override string ToString()
+        {
+            return root.ToString();
+        }
     }
 }
