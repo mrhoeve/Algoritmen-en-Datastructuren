@@ -45,6 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryTree\BinaryNode.cs" />
+    <Compile Include="BinaryTree\BinaryTree.cs" />
+    <Compile Include="FCNSNode.cs" />
+    <Compile Include="FCNSTree.cs" />
     <Compile Include="Homework\Opgave_3_1.cs" />
     <Compile Include="Homework\Opgave_3_4.cs" />
     <Compile Include="Homework\Opgave_1_5.cs" />
@@ -59,7 +63,10 @@
     </Compile>
     <Compile Include="Homework\Opgave_3_6.cs" />
     <Compile Include="Homework\Opgave_3_7.cs" />
+    <Compile Include="Homework\Week_4.cs" />
     <Compile Include="Homework\Zeef_van_Eratosthenes.cs" />
+    <Compile Include="BinaryTree\IBinaryTree.cs" />
+    <Compile Include="Interface\IFCNSTree.cs" />
     <Compile Include="Interface\IQueue.cs" />
     <Compile Include="Interface\IStack.cs" />
     <Compile Include="Interface\SimpleArrayList.cs" />
@@ -69,6 +76,7 @@
     <Compile Include="MyQueue.cs" />
     <Compile Include="MyStack.cs" />
     <Compile Include="Node.cs" />
+    <Compile Include="PopulateFCNSTree.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
