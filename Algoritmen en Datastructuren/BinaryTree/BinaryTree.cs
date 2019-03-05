@@ -95,7 +95,7 @@ namespace Algoritmen_en_Datastructuren.BinaryTree
 
         public override string ToString()
         {
-            return root.ToString();
+            return root==null ? "NULL" : root.ToString();
         }
     }
 }
