@@ -16,6 +16,6 @@ namespace Algoritmen_en_Datastructuren.BinaryTree
         void PrintPostOrder();
         void MakeEmpty();
         bool IsEmpty();
-        //void Merge(T rootItem, BinaryTree<T> t1, BinaryTree<T> t2);
+        void Merge(T rootItem, BinaryTree<T> t1, BinaryTree<T> t2);
     }
 }

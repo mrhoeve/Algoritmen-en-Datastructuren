@@ -82,7 +82,7 @@ namespace Algoritmen_en_Datastructuren.BinaryTree
         /// <param name="rootItem">new root item</param>
         /// <param name="t1">tree 1</param>
         /// <param name="t2">tree 2</param>
-        public void merge(T rootItem, BinaryTree<T> t1, BinaryTree<T> t2)
+        public void Merge(T rootItem, BinaryTree<T> t1, BinaryTree<T> t2)
         {
             if (t1.root == t2.root && t1.root != null) throw new ArgumentException();
             // Allocate new node
