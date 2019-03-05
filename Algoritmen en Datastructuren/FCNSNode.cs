@@ -22,5 +22,28 @@ namespace Algoritmen_en_Datastructuren
             return data;
         }
 
+        public static int Size(FCNSNode<T> node)
+        {
+            if (node == null) return 0;
+            return 1 + Size(node.FirstChild) + Size(node.NextSibling);
+        }
+
+        public static void PrintPreOrder(FCNSNode<T> node, int level = 0)
+        {
+            if (node == null) return;
+            if (level == 0)
+            {
+                Console.WriteLine("ROOT A");
+            }
+            else
+            {
+                for(int teller=0;teller<level;teller++)
+                    Console.Write("-->\t");
+                Console.WriteLine(node.get());
+            }
+            PrintPreOrder(node.FirstChild, level+1);
+            PrintPreOrder(node.NextSibling, level);
+        }
+
     }
 }
