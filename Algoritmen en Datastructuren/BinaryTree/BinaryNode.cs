@@ -117,9 +117,9 @@ namespace Algoritmen_en_Datastructuren.BinaryTree
 
         public void printInOrder()
         {
-            if (left != null) left.printPostOrder();
+            if (left != null) left.printInOrder();
             Console.Write(element);
-            if (right != null) right.printPostOrder();
+            if (right != null) right.printInOrder();
         }
 
         public override string ToString()
