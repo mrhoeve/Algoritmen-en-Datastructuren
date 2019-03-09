@@ -53,6 +53,7 @@
     <Compile Include="Homework\TestOpgave_2_5.cs" />
     <Compile Include="Homework\TestOpgave_3_1.cs" />
     <Compile Include="Homework\TestOpgave_3_7.cs" />
+    <Compile Include="Homework\TestOpgave_5_1.cs" />
     <Compile Include="Homework\TestOpgave_Week4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestMyArrayList.cs" />
