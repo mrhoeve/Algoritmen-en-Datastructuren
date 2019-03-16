@@ -14,7 +14,8 @@ namespace Algoritmen_en_Datastructuren
             //opgave.ShowDialog();
             //Opgave_3_7 opgave = new Opgave_3_7();
             //PopulateFCNSTree populateFCNSTree = new PopulateFCNSTree();
-            Week_4 opgaveWeek4 = new Week_4();
+            //Week_4 opgaveWeek4 = new Week_4();
+            Opgave_PriorityQueue opq = new Opgave_PriorityQueue();
             Console.ReadKey();
         }
     }

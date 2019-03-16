@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryHeap\PriorityQueue.cs" />
     <Compile Include="BinarySearchTree\AVLTree.cs" />
     <Compile Include="BinarySearchTree\BinarySearchTree.cs" />
     <Compile Include="BinarySearchTree\IBinarySearchTree.cs" />
@@ -67,6 +68,7 @@
     </Compile>
     <Compile Include="Homework\Opgave_3_6.cs" />
     <Compile Include="Homework\Opgave_3_7.cs" />
+    <Compile Include="Homework\Opgave_PriorityQueue.cs" />
     <Compile Include="Homework\Week_4.cs" />
     <Compile Include="Homework\Zeef_van_Eratosthenes.cs" />
     <Compile Include="BinaryTree\IBinaryTree.cs" />
