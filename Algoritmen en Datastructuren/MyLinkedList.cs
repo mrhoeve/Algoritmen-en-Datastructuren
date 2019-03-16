@@ -1,5 +1,6 @@
 ﻿using Algoritmen_en_Datastructuren.Interface;
 using System;
+using System.Collections.Generic;
 
 namespace Algoritmen_en_Datastructuren
 {

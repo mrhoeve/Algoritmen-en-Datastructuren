@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Homework\Graphs\TestGraph.cs" />
     <Compile Include="Homework\TestAVLTree.cs" />
     <Compile Include="Homework\TestOpgave_2_4.cs" />
     <Compile Include="Homework\TestOpgave_2_5.cs" />

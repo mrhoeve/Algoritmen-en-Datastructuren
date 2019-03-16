@@ -54,6 +54,11 @@
     <Compile Include="BinaryTree\BinaryTree.cs" />
     <Compile Include="FCNSNode.cs" />
     <Compile Include="FCNSTree.cs" />
+    <Compile Include="Graphs\Edge.cs" />
+    <Compile Include="Graphs\Graph.cs" />
+    <Compile Include="Graphs\IGraph.cs" />
+    <Compile Include="Graphs\IVertex.cs" />
+    <Compile Include="Graphs\Vertex.cs" />
     <Compile Include="Homework\Opgave_3_1.cs" />
     <Compile Include="Homework\Opgave_3_4.cs" />
     <Compile Include="Homework\Opgave_1_5.cs" />
@@ -68,6 +73,7 @@
     </Compile>
     <Compile Include="Homework\Opgave_3_6.cs" />
     <Compile Include="Homework\Opgave_3_7.cs" />
+    <Compile Include="Homework\Opgave_Graphs.cs" />
     <Compile Include="Homework\Opgave_PriorityQueue.cs" />
     <Compile Include="Homework\Week_4.cs" />
     <Compile Include="Homework\Zeef_van_Eratosthenes.cs" />
