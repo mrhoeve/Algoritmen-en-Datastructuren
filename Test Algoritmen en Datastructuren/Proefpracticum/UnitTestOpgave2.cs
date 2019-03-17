@@ -35,8 +35,31 @@ namespace Test_Algoritmen_en_Datastructuren.Proefpracticum
             bst.Insert(4);
             bst.Insert(3);
             bst.Insert(8);
-
             Assert.AreEqual(3, bst.geefEenNaKleinsteElement());
+        }
+
+        [TestMethod]
+        public void TestOpgave2ZonderNodesEenenDrie()
+        {
+            // Extra test
+            Opgave2 bst = new Opgave2();
+            bst.Insert(6);
+            bst.Insert(2);
+            bst.Insert(4);
+            bst.Insert(8);
+            Assert.AreEqual(4, bst.geefEenNaKleinsteElement());
+        }
+
+        [TestMethod]
+        public void TestOpgave2MetRootEnTweeChilds()
+        {
+            // Extra test
+            Opgave2 bst = new Opgave2();
+            bst.Insert(6);
+            bst.Insert(2);
+            bst.Insert(8);
+            // Nu verwachten we de root terug
+            Assert.AreEqual(6, bst.geefEenNaKleinsteElement());
         }
     }
 }
