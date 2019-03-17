@@ -56,8 +56,10 @@
     <Compile Include="FCNSTree.cs" />
     <Compile Include="Graphs\Edge.cs" />
     <Compile Include="Graphs\Graph.cs" />
+    <Compile Include="Graphs\GraphPriorityQueue.cs" />
     <Compile Include="Graphs\IGraph.cs" />
     <Compile Include="Graphs\IVertex.cs" />
+    <Compile Include="Graphs\Path.cs" />
     <Compile Include="Graphs\Vertex.cs" />
     <Compile Include="Homework\Opgave_3_1.cs" />
     <Compile Include="Homework\Opgave_3_4.cs" />

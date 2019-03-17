@@ -9,7 +9,7 @@ namespace Algoritmen_en_Datastructuren.Graphs
     public class Vertex : IVertex
     {
         public String name { get; set; }
-        public LinkedList<Edge> adj { get; set; }
+        public List<Edge> adj { get; set; }
         public double dist { get; set; }
         public Vertex prev { get; set; }
         public int? scratch { get; set; }
@@ -17,7 +17,7 @@ namespace Algoritmen_en_Datastructuren.Graphs
         public Vertex(string nm)
         {
             this.name = nm;
-            adj = new LinkedList<Edge>();
+            adj = new List<Edge>();
             Reset();
         }
 
@@ -31,7 +31,11 @@ namespace Algoritmen_en_Datastructuren.Graphs
 
         public override string ToString()
         {
-            return base.ToString();
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"{name} --> ");
+            foreach (Edge v in adj)
+                sb.Append($"{v.dest.name}({v.cost}) ");
+            return sb.ToString().Trim();
         }
     }
 }
