@@ -91,6 +91,8 @@
     <Compile Include="MyStack.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="PopulateFCNSTree.cs" />
+    <Compile Include="Proefpracticum\Opgave1.cs" />
+    <Compile Include="Proefpracticum\Opgave2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

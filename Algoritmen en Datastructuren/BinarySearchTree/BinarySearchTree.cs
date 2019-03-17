@@ -8,7 +8,7 @@ namespace Algoritmen_en_Datastructuren.BinarySearchTree
 {
     public class BinarySearchTree : IBinarySearchTree
     {
-        private Node root;
+        protected Node root;
 
         public BinarySearchTree()
         {
